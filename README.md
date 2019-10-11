@@ -1,21 +1,93 @@
 Pick Largest Number
 ===
 
-Description
+TLDR;
 ---
 
-Simulation of the open problem presented in the book "Open Problems in Communication and Computation".
+Simulation of the open problem presented in the book "Open Problems in Communication and Computation", back in 1987.
 
-Player 1 writes down any two distinct numbers on separate slips of paper. Player 2 randomly chooses one of these slips of paper and looks at the number. Player 2 must decide whether the number in his hand is the larger of the two numbers. He can be right with probability one-half. It seems absurd that he can do better.
-
-As wierd as it is, the proposed method (referred to as 'advanced strategy' in the sumulation) just works. To me, it looks like entanglment effect in pure math world.
-I wonder how it could be used ;)
-
-Running
+The problem
 ---
 
-Before running first time, make sure to install the requirements by running *pip3 install -r requirements.txt*. 
-Then just run as follows:
+The above paper is the oldest problem forumulation I found so far by a quck search on google, 
+but according to the referenced [2] paper - 
+*"... A variant of the first puzzle goes back to the mathematician Littlewood, 
+who attributed it to the physicist Schrodinger."*
+
+Below is the formulation as layed out in referenced [1] paper:
+
+    "
+    Player 1 writes down any two distinct numbers on separate slips of paper. 
+    Player 2 randomly chooses one of these slips of paper and looks at the number. 
+    Player 2 must decide whether the number in his hand is the larger of the two numbers. 
+    He can be right with probability one-half. It seems absurd that he can do better."
+
+    We argue that Player 2 has a strategy by which he can correctly state
+    whether or not the other number is larger or smaller than the number in
+    his hand with probability strictly greater than one-half.
+
+    Solution: The idea is to pick a random splilting number T according to a
+    density fit) , f{t) > 0 • for t e (-inf, inf). If the number in hand is less
+    than T, decide that it is the smaller; if greater than T, decide that it is
+    the larger.
+
+    Problem: Does this result generalize? Does it apply to the secretary problem? 
+    "
+
+As wierd as it is, the proposed method referred to as 'strategy 2' in the sumulation code - just works. 
+To me, it looks like the quantum entanglment effect in pure math world. No wander Schrodinger noticed something about it.
+
+Now, I wonder how it could be used ;)
+
+The solution?
+---
+
+In the reference [2] there is a proof of a theorem that shed some light on this mystery.
+
+    "
+    RANKING BY ONE OBSERVATION. Let X = (X1,..., Xn) be a vector of n
+    real-valued random variables on some sample space. Denote by W the set of weak
+    orders over {1,..., n}.
+    1 The ranking of X is a random variable r(X) with values in W.
+    For W in W, r(X) = W whenever, for all i and j in {1,..., n}, Xi ≥ X j if and only
+    if iWj.
+
+    Proposition 1. If the random variables Xi and r(X) are independent for each i, then
+    r(X) is constant almost surely
+    "
+
+The problem is formulated as follows:
+
+    "
+    Guessing which is larger. It is helpful to present this puzzle as a two-person, zerosum, win-lose game. The first player C chooses the numbers, while the second
+    player G makes the guess after observing the number on one of the slips that was
+    chosen at random. Player G wins if and only if she guesses correctly
+    "
+
+    "
+    The pure strategies of C are pairs (x 1 , x 2 ) of distinct real numbers. A mixed strategy
+    of C is a pair of random variables (X 1 , X 2 ) such that P(X 1  = X 2 ) = 1. 4 We restrict
+    G’s pure strategies to threshold strategies. Each t in R represents the threshold strategy
+    at which the player guesses that the observed number x is the larger if x ≥ t and is the
+    smaller otherwise, independently of which slip she observes.    
+    "
+
+Using the proof above and several additional statements, it is shown that 
+
+Running the Simulation
+---
+
+To get the code locally and install prerequisits:
+```bash
+git clone https://github.com/aharonh/pick-largest.git
+cd pick-largest
+pip3 install -r requirements.txt
+```
+To run, type the following:
+```bash
+pip3 install -r requirements.txt
+```
+Below is the sample output:
 
 
             aharon@dev:~/src/pick-largest$ python3 pick-largest.py 
@@ -71,4 +143,5 @@ Then just run as follows:
 
 References
 ---
-- Cover T.M. (1987) Pick the Largest Number. In: Cover T.M., Gopinath B. (eds) Open Problems in Communication and Computation. Springer, New York, NY
+- [1] Cover T.M. (1987) Pick the Largest Number. In: Cover T.M., Gopinath B. (eds) Open Problems in Communication and Computation. Springer, New York, NY https://doi.org/10.1007/978-1-4612-4808-8_43 
+- [2] Samet, D., Samet, I., & Schmeidler, D. (2004). One Observation behind Two-Envelope Puzzles. The American Mathematical Monthly, 111(4), 347–351. https://doi.org/10.1080/00029890.2004.11920083
