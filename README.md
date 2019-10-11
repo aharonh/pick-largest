@@ -4,7 +4,7 @@ Pick Largest Number
 TLDR;
 ---
 
-Simulation of the open problem presented in the book "Open Problems in Communication and Computation", back in 1987.
+Simulation of the (previously) open problem presented in the book "Open Problems in Communication and Computation", back in 1987.
 
 The problem
 ---
@@ -33,11 +33,6 @@ Below is the formulation as layed out in referenced [1] paper:
 
     Problem: Does this result generalize? Does it apply to the secretary problem? 
     "
-
-As wierd as it is, the proposed method referred to as 'strategy 2' in the sumulation code - just works. 
-To me, it looks like the quantum entanglment effect in pure math world. No wander Schrodinger noticed something about it.
-
-Now, I wonder how it could be used ;)
 
 The solution?
 ---
@@ -89,6 +84,18 @@ of C, then she
 **Claim 3.** There is no mixed strategy (X 1 , X 2 ) of C such that
 - P(X 1 > X 2 ) = P(X 2 > X 1 ) = 1/2;
 - each of X 1 and X 2 is independent of the events X 1 > X 2 and X 2 > X 1 .
+
+
+The mystery
+---
+
+As wierd as it is, the proposed method referred to as 'strategy 2' in the sumulation code - just works. 
+To me, it looks like the quantum entanglment effect in pure math world. No wander Schrodinger noticed something about it.
+
+I might need to look into the proof further but having read it several times, it still leaves me surprised
+that observing additional random value can help raise probability of choosing correct.
+
+Now, I wonder how it could be used! Could we somehow use it to improve prediction models?
 
 Running the Simulation
 ---
