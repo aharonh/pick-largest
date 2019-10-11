@@ -56,23 +56,39 @@ In the reference [2] there is a proof of a theorem that shed some light on this 
     r(X) is constant almost surely
     "
 
-The problem is formulated as follows:
+The problem is re-formulated as follows:
 
     "
-    Guessing which is larger. It is helpful to present this puzzle as a two-person, zerosum, win-lose game. The first player C chooses the numbers, while the second
+    Guessing which is larger. It is helpful to present this puzzle as a two-person, 
+    zerosum, win-lose game. The first player C chooses the numbers, while the second
     player G makes the guess after observing the number on one of the slips that was
     chosen at random. Player G wins if and only if she guesses correctly
     "
 
+And the winning strategy is called the threshold strategy:
+
     "
     The pure strategies of C are pairs (x 1 , x 2 ) of distinct real numbers. A mixed strategy
-    of C is a pair of random variables (X 1 , X 2 ) such that P(X 1  = X 2 ) = 1. 4 We restrict
+    of C is a pair of random variables (X 1 , X 2 ) such that P(X 1 != X 2 ) = 1. We restrict
     G’s pure strategies to threshold strategies. Each t in R represents the threshold strategy
     at which the player guesses that the observed number x is the larger if x ≥ t and is the
     smaller otherwise, independently of which slip she observes.    
     "
 
 Using the proof above and several additional statements, it is shown that 
+
+**Claim 1.** If G plays an arbitrary threshold strategy t against any pure strategy (x 1 , x 2 )
+of C, then she
+
+- wins with probability 1/2 when either x , x < t or x , x ≥ t;
+- wins for sure when either x < t ≤ x or x < t ≤ x .
+
+**Claim 2.** The strategy Q guarantees that player G wins with probability higher than
+1/2 against any pure strategy of C.
+
+**Claim 3.** There is no mixed strategy (X 1 , X 2 ) of C such that
+- P(X 1 > X 2 ) = P(X 2 > X 1 ) = 1/2;
+- each of X 1 and X 2 is independent of the events X 1 > X 2 and X 2 > X 1 .
 
 Running the Simulation
 ---
