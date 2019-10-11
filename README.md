@@ -4,7 +4,7 @@ Pick Largest Number
 TLDR;
 ---
 
-Simulation of the (previously) open problem presented in the book "Open Problems in Communication and Computation", back in 1987.
+Simulation of the (previously?) open problem presented in the book "Open Problems in Communication and Computation", back in 1987.
 
 The problem
 ---
@@ -70,7 +70,7 @@ And the winning strategy is called the threshold strategy:
     smaller otherwise, independently of which slip she observes.    
     "
 
-Using the proof above and several additional statements, it is shown that 
+Using the proof above and several additional statements, it is shown that: 
 
 **Claim 1.** If G plays an arbitrary threshold strategy t against any pure strategy (x 1 , x 2 )
 of C, then she
@@ -168,3 +168,4 @@ References
 ---
 - [1] Cover T.M. (1987) Pick the Largest Number. In: Cover T.M., Gopinath B. (eds) Open Problems in Communication and Computation. Springer, New York, NY https://doi.org/10.1007/978-1-4612-4808-8_43 
 - [2] Samet, D., Samet, I., & Schmeidler, D. (2004). One Observation behind Two-Envelope Puzzles. The American Mathematical Monthly, 111(4), 347–351. https://doi.org/10.1080/00029890.2004.11920083
+- [3] Wikipedia - Secretary problem https://en.wikipedia.org/wiki/Secretary_problem
